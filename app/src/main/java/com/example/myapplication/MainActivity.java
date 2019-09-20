@@ -2,6 +2,8 @@ package com.example.myapplication;
 
         import androidx.appcompat.app.AppCompatActivity;
 
+        import android.app.AlertDialog;
+        import android.content.DialogInterface;
         import android.content.Intent;
         import android.os.Bundle;
         import android.view.View;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         mAnimation.setRepeatCount(Animation.INFINITE);
         mAnimation.setRepeatMode(Animation.REVERSE);
         play.startAnimation(mAnimation);
-//
+
     }
 
     public void play(View view) {
@@ -42,5 +44,23 @@ public class MainActivity extends AppCompatActivity {
     public void demo(View view) {
         Intent intent = new Intent(this,demo.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Closing Activity")
+                .setMessage("Are you sure to close this ?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 }
