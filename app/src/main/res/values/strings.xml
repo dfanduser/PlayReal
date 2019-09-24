@@ -6,4 +6,7 @@
     <string name="tapped">TAPPED</string>
     <string name="demo">DEMO</string>
     <string name="play">PLAY</string>
+    <string name="alert">ENTER REFER ID</string>
+    <string name="dismiss">SKIP</string>
+    <string name="submit">SUBMIT</string>
 </resources>
