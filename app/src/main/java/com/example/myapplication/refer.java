@@ -3,11 +3,8 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.util.Random;
 
 public class refer extends AppCompatActivity {
 
@@ -22,16 +19,7 @@ public class refer extends AppCompatActivity {
         textView =findViewById(R.id.textView);
         codebtn = findViewById(R.id.codebtn);
 
-
-        codebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Random random =new Random();
-                int number = random.nextInt(999999);
-                textView.setText(String.format(String.valueOf(number), "%06d",number));
-
-            }
-        });
+        textView.setText(String.valueOf(MainActivity.reffer));
 
 
 
